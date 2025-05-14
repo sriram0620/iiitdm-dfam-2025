@@ -11,7 +11,7 @@ export default function Statistics() {
   const [hasAnimated, setHasAnimated] = useState(false)
 
   const stats = [
-    { icon: <Calendar className="h-8 w-8" />, value: 5, label: "Days", suffix: "", description: "Intensive learning" },
+    { icon: <Calendar className="h-8 w-8" />, value: 11, label: "Days", suffix: "", description: "Intensive learning" },
     {
       icon: <BookOpen className="h-8 w-8" />,
       value: 20,

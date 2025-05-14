@@ -39,7 +39,7 @@ export default function Faq() {
     {
       question: "Is there a refund policy for registration fees?",
       answer:
-        "Cancellations made before November 25, 2025 will receive a 50% refund. No refunds will be provided for cancellations after this date. However, substitution of participants from the same organization is allowed with prior notification.",
+        "Cancellations made before July 5, 2025 will receive a 50% refund. No refunds will be provided for cancellations after this date. However, substitution of participants from the same organization is allowed with prior notification.",
     },
     {
       question: "Will the program include hands-on sessions?",

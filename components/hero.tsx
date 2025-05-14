@@ -126,7 +126,7 @@ export default function Hero() {
             className="flex flex-col items-center text-center"
           >
             <div className="inline-block mb-6 px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <span className="text-teal-400 font-medium">December 6-10, 2021</span>
+              <span className="text-teal-400 font-medium">July 14-25, 2025 (Excluding July 20)</span>
             </div>
 
             <motion.h1
@@ -135,7 +135,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
-              Design for{" "}
+              AI Enabled Design for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500">Additive</span>{" "}
               Manufacturing
             </motion.h1>
@@ -187,7 +187,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
                 <Calendar className="h-5 w-5 text-teal-400" />
-                <span>December 6-10, 2021</span>
+                <span>July 14-25, 2025</span>
               </div>
             </motion.div>
           </motion.div>

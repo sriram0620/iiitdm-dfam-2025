@@ -195,7 +195,7 @@ export default function Registration() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold text-lg text-slate-800">Registration Deadline</h4>
-                  <p className="text-slate-600">December 1, 2025</p>
+                  <p className="text-slate-600">July 10, 2025</p>
                   <p className="text-sm text-slate-500 mt-1">Spot registration with prior intimation</p>
                 </div>
               </div>
@@ -207,8 +207,8 @@ export default function Registration() {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-bold text-lg text-slate-800">Program Dates</h4>
-                  <p className="text-slate-600">December 6-10, 2025</p>
-                  <p className="text-sm text-slate-500 mt-1">Five full days of sessions</p>
+                  <p className="text-slate-600">July 14-25, 2025 (Excluding July 20)</p>
+                  <p className="text-sm text-slate-500 mt-1">11 full days of sessions</p>
                 </div>
               </div>
             </div>
