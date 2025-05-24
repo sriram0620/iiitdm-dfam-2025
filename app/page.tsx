@@ -7,11 +7,11 @@ import Schedule from "@/components/schedule"
 import Institute from "@/components/institute"
 import Footer from "@/components/footer"
 import Gallery from "@/components/gallery"
-import FloatingCta from "@/components/floating-cta"
 import Speakers from "@/components/speakers"
 import Resources from "@/components/resources"
 import CountdownTimer from "@/components/countdown-timer"
 import TopicsList from "@/components/topics-list"
+import PricingOverview from "@/components/pricing-overview"
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
       <Hero />
       <About />
       <Statistics />
+      {/* <PricingOverview /> */}
       <TopicsList />
       <Gallery />
       <Speakers />
@@ -29,7 +30,6 @@ export default function Home() {
       <Resources />
       <Institute />
       <Footer />
-      <FloatingCta />
     </main>
   )
 }

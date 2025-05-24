@@ -20,6 +20,7 @@ export default function Navbar() {
     { id: "topics", label: "Topics", href: "/#topics" },
     { id: "registration", label: "Registration", href: "/#registration" },
     { id: "schedule", label: "Schedule", href: "/#schedule" },
+    { id: "payment", label: "Payment Details", href: "/payment" },
     { id: "testimonials", label: "Testimonials", href: "/testimonials" },
     { id: "contact", label: "Contact", href: "/contact" },
   ]
@@ -66,6 +67,8 @@ export default function Navbar() {
       setActiveSection("contact")
     } else if (pathname === "/") {
       setActiveSection("home")
+    } else if (pathname === "/payment") {
+      setActiveSection("payment")
     }
   }, [pathname])
 
@@ -73,7 +76,11 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500",
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5",
+        pathname === "/" 
+          ? scrolled 
+            ? "bg-white/90 backdrop-blur-md shadow-lg py-3" 
+            : "bg-transparent py-5"
+          : "bg-white/90 backdrop-blur-md shadow-lg py-3"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -90,18 +97,18 @@ export default function Navbar() {
             <span
               className={cn(
                 "font-bold text-xl transition-colors duration-300",
-                scrolled ? "text-slate-800" : "text-white",
+                pathname === "/" && !scrolled ? "text-white" : "text-slate-800"
               )}
             >
-              DfAM <span className="text-teal-500">2025</span>
+              DfAM <span className="text-teal-500">2023</span>
             </span>
             <span
               className={cn(
                 "block text-xs font-medium transition-colors duration-300",
-                scrolled ? "text-slate-500" : "text-white/70",
+                pathname === "/" && !scrolled ? "text-white/70" : "text-slate-500"
               )}
             >
-              Design for Additive Manufacturing
+              AI Enabled Design for Additive Manufacturing
             </span>
           </div>
         </Link>
@@ -115,19 +122,22 @@ export default function Navbar() {
               className={cn(
                 "relative px-4 py-2 font-medium text-sm transition-colors duration-300 rounded-md",
                 activeSection === item.id
-                  ? scrolled
-                    ? "text-teal-600"
-                    : "text-white"
-                  : scrolled
-                    ? "text-slate-600 hover:text-teal-600 hover:bg-slate-100"
-                    : "text-white/80 hover:text-white hover:bg-white/10",
+                  ? pathname === "/" && !scrolled
+                    ? "text-white"
+                    : "text-teal-600"
+                  : pathname === "/" && !scrolled
+                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                    : "text-slate-600 hover:text-teal-600 hover:bg-slate-100"
               )}
             >
               {item.label}
               {activeSection === item.id && (
                 <motion.div
                   layoutId="activeSection"
-                  className={cn("absolute bottom-0 left-0 right-0 h-0.5 mx-2", scrolled ? "bg-teal-500" : "bg-white")}
+                  className={cn(
+                    "absolute bottom-0 left-0 right-0 h-0.5 mx-2",
+                    pathname === "/" && !scrolled ? "bg-white" : "bg-teal-500"
+                  )}
                   initial={false}
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                 />
@@ -137,8 +147,15 @@ export default function Navbar() {
           <Button
             className="ml-4 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0"
             size="sm"
+            asChild
           >
-            Register Now
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </a>
           </Button>
         </nav>
 
@@ -181,8 +198,15 @@ export default function Navbar() {
               <Button
                 className="mt-8 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg border-0"
                 onClick={() => setIsOpen(false)}
+                asChild
               >
-                Register Now
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Register Now
+                </a>
               </Button>
             </nav>
           </motion.div>

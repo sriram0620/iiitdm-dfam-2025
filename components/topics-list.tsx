@@ -16,62 +16,71 @@ export default function TopicsList() {
       description:
         "Design shells and assign material for realizing full-color multi-material products with digital materials.",
       icon: <Boxes className="h-10 w-10 text-teal-500" />,
-      image: "/topics/multi-materials.jpg",
+      image: "/topics/multi-materials-new.png",
+      gradient: "from-blue-500/20 to-purple-500/20",
     },
     {
       title: "Functional Integration",
       description:
         "Integrate as many technical functions as possible into as few parts as possible to take advantage of design freedom in AM.",
       icon: <Cpu className="h-10 w-10 text-teal-500" />,
-      image: "/topics/functional-integration.jpg",
+      image: "/topics/functional-integration-new.png",
+      gradient: "from-green-500/20 to-teal-500/20",
     },
     {
       title: "Mass Customization",
       description:
         "Customize the design for personalization and flexibility and at the same time achieve the low cost of mass production.",
       icon: <RefreshCw className="h-10 w-10 text-teal-500" />,
-      image: "/topics/mass-customization.jpg",
+      image: "/topics/mass-customization-new.png",
+      gradient: "from-orange-500/20 to-red-500/20",
     },
     {
       title: "Part Consolidation",
       description:
-        "Achieve part count reduction for ease of assembly and simplify the product design yet introduce mare shape complexity.",
+        "Achieve part count reduction for ease of assembly and simplify the product design yet introduce more shape complexity.",
       icon: <Maximize2 className="h-10 w-10 text-teal-500" />,
-      image: "/topics/part-consolidation.jpg",
+      image: "/topics/part-consolidation-new.png",
+      gradient: "from-purple-500/20 to-pink-500/20",
     },
     {
       title: "Light-Weighting",
       description:
         "Introduce intricate lattice structures with structural optimization to reduce weight and efficiency of mobility solutions.",
       icon: <Zap className="h-10 w-10 text-teal-500" />,
-      image: "/topics/light-weighting.jpg",
+      image: "/topics/light-weighting-new.png",
+      gradient: "from-yellow-500/20 to-orange-500/20",
     },
     {
       title: "Heterogeneous Modeling",
       description:
         "Design multi-material and gradient structures to take advantage of possible material complexity in AM.",
       icon: <Grid3X3 className="h-10 w-10 text-teal-500" />,
-      image: "/topics/heterogeneous-modeling.jpg",
+      image: "/topics/heterogeneous-modeling-new.png",
+      gradient: "from-indigo-500/20 to-blue-500/20",
     },
     {
       title: "Generative Design",
       description:
         "Iterative design process that outputs optimized design that meets real-world manufacturing constraints.",
       icon: <Workflow className="h-10 w-10 text-teal-500" />,
-      image: "/topics/generative-design.jpg",
+      image: "/topics/generative-design-new.png",
+      gradient: "from-emerald-500/20 to-green-500/20",
     },
     {
       title: "Hierarchical Structures",
       description: "Design repeating structures in macro, meso, micro, and nano scales to get superior performance.",
       icon: <Repeat className="h-10 w-10 text-teal-500" />,
-      image: "/topics/hierarchical-structures.jpg",
+      image: "/topics/hierarchical-structures-new.png",
+      gradient: "from-rose-500/20 to-pink-500/20",
     },
     {
       title: "Topology Optimization",
       description:
         "Optimize material layout within a given space, for a given set of loads, boundary conditions and constraints.",
       icon: <Layers className="h-10 w-10 text-teal-500" />,
-      image: "/topics/topology-optimization.jpg",
+      image: "/topics/topology-optimization-new.png",
+      gradient: "from-cyan-500/20 to-teal-500/20",
     },
   ]
 
@@ -129,7 +138,7 @@ export default function TopicsList() {
           </h2>
 
           <p className="text-lg text-slate-600">
-            Explore the comprehensive curriculum of advanced topics covered in the DfAM 2025 program.
+            Explore the comprehensive curriculum of advanced topics covered in the DfAM 2023 program.
           </p>
         </motion.div>
 
@@ -144,34 +153,70 @@ export default function TopicsList() {
               key={index}
               variants={itemVariants}
               className={cn(
-                "group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500",
+                "group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700",
                 "border border-slate-100",
-                "transform hover:-translate-y-2",
+                "transform hover:-translate-y-3 hover:scale-[1.02]",
               )}
             >
-              <div className="h-48 relative overflow-hidden">
+              {/* Image Container with Overlay */}
+              <div className="h-56 relative overflow-hidden">
                 <Image
-                  src={topic.image || "/placeholder.svg?height=400&width=600&query=3d%20printing%20technology"}
+                  src={topic.image || "/placeholder.svg"}
                   alt={topic.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-all duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
+
+                {/* Gradient Overlay */}
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent",
+                    "transition-opacity duration-500",
+                  )}
+                ></div>
+
+                {/* Colored Gradient Overlay on Hover */}
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-t opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                    topic.gradient,
+                  )}
+                ></div>
+
+                {/* Title Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white group-hover:text-teal-300 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white group-hover:text-teal-100 transition-colors duration-300">
                     {topic.title}
                   </h3>
                 </div>
+
+                {/* Floating Icon */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="bg-white/20 backdrop-blur-md rounded-full p-3 border border-white/30">
+                    <div className="text-white">{topic.icon}</div>
+                  </div>
+                </div>
               </div>
 
+              {/* Content Section */}
               <div className="p-6 relative">
-                <div className="absolute -top-10 right-6 bg-white rounded-full p-3 shadow-lg border border-slate-100">
+                {/* Floating Icon for Desktop */}
+                <div className="absolute -top-10 right-6 bg-white rounded-full p-3 shadow-lg border border-slate-100 group-hover:shadow-xl transition-all duration-500 group-hover:scale-110">
                   <div className="bg-teal-50 rounded-full p-2">{topic.icon}</div>
                 </div>
-                <p className="text-slate-600 mt-2">{topic.description}</p>
+
+                <div className="mt-2">
+                  <p className="text-slate-600 leading-relaxed">{topic.description}</p>
+                </div>
+
+                {/* Hover Effect Line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              {/* Subtle Glow Effect */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-teal-400/10 to-teal-600/10"></div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -182,8 +227,9 @@ export default function TopicsList() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block bg-teal-50 px-6 py-3 rounded-full">
-            <p className="text-teal-700 font-medium">
+          <div className="inline-block bg-gradient-to-r from-teal-50 to-teal-100/50 px-8 py-4 rounded-2xl border border-teal-200">
+            <p className="text-teal-700 font-medium flex items-center justify-center">
+              <Lightbulb className="h-5 w-5 mr-2 text-teal-500" />
               All topics include both theoretical knowledge and hands-on practical sessions
             </p>
           </div>

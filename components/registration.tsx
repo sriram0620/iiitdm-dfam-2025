@@ -4,7 +4,6 @@ import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Calendar, Clock, AlertCircle, Check, Star } from "lucide-react"
-import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { cn } from "@/lib/utils"
 
@@ -16,31 +15,36 @@ export default function Registration() {
     {
       title: "Students",
       subtitle: "UG/PG/Research",
-      price: "₹1,000",
+      price: "₹1,770",
+      originalPrice: "",
       features: [
         "Access to all sessions",
         "Workshop materials",
         "Certificate of participation",
         "Lunch and refreshments",
+        "Includes processing fees",
       ],
     },
     {
       title: "Faculty",
       subtitle: "Academic Institutions",
-      price: "₹3,000",
+      price: "₹3,540",
+      originalPrice: "",
       features: [
         "Access to all sessions",
         "Workshop materials",
         "Certificate of participation",
         "Lunch and refreshments",
         "Networking opportunities",
+        "Includes processing fees",
       ],
       featured: true,
     },
     {
       title: "Industry",
       subtitle: "Professionals & Others",
-      price: "₹7,000",
+      price: "₹8,260",
+      originalPrice: "",
       features: [
         "Access to all sessions",
         "Workshop materials",
@@ -48,6 +52,7 @@ export default function Registration() {
         "Lunch and refreshments",
         "Networking opportunities",
         "Industry-specific insights",
+        "Includes processing fees",
       ],
     },
   ]
@@ -142,6 +147,10 @@ export default function Registration() {
                   <CardDescription>{plan.subtitle}</CardDescription>
                   <div className="mt-4">
                     <span className="text-4xl font-bold text-slate-800">{plan.price}</span>
+                    {plan.originalPrice && (
+                      <span className="text-lg text-slate-500 line-through ml-2">{plan.originalPrice}</span>
+                    )}
+                    <p className="text-xs text-slate-500 mt-1">*Includes SBI processing fees</p>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-6">
@@ -168,7 +177,13 @@ export default function Registration() {
                     )}
                     asChild
                   >
-                    <Link href="#contact">Register Now</Link>
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register Now
+                    </a>
                   </Button>
                 </CardFooter>
               </Card>
@@ -176,65 +191,21 @@ export default function Registration() {
           ))}
         </motion.div>
 
+        {/* Payment Details Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 border border-slate-100"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mb-16"
         >
-          <h3 className="text-2xl font-bold mb-8 text-slate-800 text-center">Important Dates</h3>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="relative">
-              <div className="absolute top-0 bottom-0 left-6 border-l-2 border-dashed border-teal-200"></div>
-
-              <div className="relative flex items-start space-x-4 pb-8">
-                <div className="absolute left-6 w-3 h-3 bg-teal-500 rounded-full transform -translate-x-1/2 mt-1.5"></div>
-                <div className="bg-teal-50 p-3 rounded-full text-teal-600 ml-8">
-                  <Calendar className="h-6 w-6" />
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-lg text-slate-800">Registration Deadline</h4>
-                  <p className="text-slate-600">July 10, 2025</p>
-                  <p className="text-sm text-slate-500 mt-1">Spot registration with prior intimation</p>
-                </div>
-              </div>
-
-              <div className="relative flex items-start space-x-4">
-                <div className="absolute left-6 w-3 h-3 bg-teal-500 rounded-full transform -translate-x-1/2 mt-1.5"></div>
-                <div className="bg-teal-50 p-3 rounded-full text-teal-600 ml-8">
-                  <Clock className="h-6 w-6" />
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-lg text-slate-800">Program Dates</h4>
-                  <p className="text-slate-600">July 14-25, 2025 (Excluding July 20)</p>
-                  <p className="text-sm text-slate-500 mt-1">11 full days of sessions</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-xl p-6 flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <AlertCircle className="h-6 w-6 text-amber-500" />
-              </div>
-              <div>
-                <h4 className="font-bold text-lg text-amber-800 mb-2">Limited Availability</h4>
-                <p className="text-amber-700">
-                  Registration is limited to 60 participants to ensure quality interaction and personalized attention.
-                  Early registration is recommended to secure your spot.
-                </p>
-                <div className="mt-4 pt-4 border-t border-amber-200">
-                  <div className="flex items-center justify-between">
-                    <span className="text-amber-800 font-medium">Spots Remaining</span>
-                    <span className="text-amber-800 font-bold">12</span>
-                  </div>
-                  <div className="mt-2 h-2 bg-amber-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-amber-500 to-amber-600 w-[20%]"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Button
+            className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg"
+            asChild
+          >
+            <a href="/payment">
+              View Payment Details
+            </a>
+          </Button>
         </motion.div>
       </div>
     </section>

@@ -10,8 +10,8 @@ export default function CountdownTimer() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
-  // Set the target date to July 10, 2025 (registration deadline)
-  const targetDate = new Date("2025-07-10T23:59:59").getTime()
+  // Set the target date to July 10, 2023 (registration deadline)
+  const targetDate = new Date("2023-07-10T23:59:59").getTime()
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -98,12 +98,12 @@ export default function CountdownTimer() {
               <p className="text-white/80 mb-6">
                 {isExpired
                   ? "The registration deadline has passed. Please contact us for late registration possibilities."
-                  : "Secure your spot in the DfAM 2025 program before registration closes. Limited seats available!"}
+                  : "Secure your spot in the DfAM 2021 program before registration closes. Limited seats available!"}
               </p>
 
               <div className="flex items-center mb-8">
                 <Calendar className="h-5 w-5 text-teal-400 mr-2" />
-                <span className="text-white/80">Deadline: July 10, 2025</span>
+                <span className="text-white/80">Deadline: July 10, 2023</span>
               </div>
 
               <Button
@@ -149,11 +149,11 @@ export default function CountdownTimer() {
                 <div className="flex items-center">
                   <div className="w-2 h-2 rounded-full bg-teal-400 mr-2 animate-pulse"></div>
                   <span className="text-white/80 text-sm">
-                    <strong className="text-teal-400">Only 12 spots remaining</strong> out of 60 total seats
+                    <strong className="text-teal-400">Registration is now open</strong> - Secure your spot today
                   </span>
                 </div>
                 <div className="mt-2 h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-teal-400 to-teal-500 w-[80%]"></div>
+                  <div className="h-full bg-gradient-to-r from-teal-400 to-teal-500 w-[20%]"></div>
                 </div>
               </div>
             </div>

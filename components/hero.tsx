@@ -126,7 +126,7 @@ export default function Hero() {
             className="flex flex-col items-center text-center"
           >
             <div className="inline-block mb-6 px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <span className="text-teal-400 font-medium">July 14-25, 2025 (Excluding July 20)</span>
+              <span className="text-teal-400 font-medium">July 14-25, 2023 (Excluding July 20)</span>
             </div>
 
             <motion.h1
@@ -161,9 +161,13 @@ export default function Hero() {
                 size="lg"
                 className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-0"
               >
-                <Link href="#registration">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Register Now <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
               <Button
                 asChild
@@ -187,7 +191,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
                 <Calendar className="h-5 w-5 text-teal-400" />
-                <span>July 14-25, 2025</span>
+                <span>July 14-25, 2023</span>
               </div>
             </motion.div>
           </motion.div>
