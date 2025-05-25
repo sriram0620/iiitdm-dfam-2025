@@ -100,7 +100,7 @@ export default function Navbar() {
                 pathname === "/" && !scrolled ? "text-white" : "text-slate-800"
               )}
             >
-              DfAM <span className="text-teal-500">2023</span>
+              DfAM <span className="text-teal-500">2025</span>
             </span>
             <span
               className={cn(

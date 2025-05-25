@@ -126,7 +126,7 @@ export default function Hero() {
             className="flex flex-col items-center text-center"
           >
             <div className="inline-block mb-6 px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <span className="text-teal-400 font-medium">July 14-25, 2023 (Excluding July 20)</span>
+              <span className="text-teal-400 font-medium">July 14-25, 2025 (Excluding July 20)</span>
             </div>
 
             <motion.h1
@@ -191,7 +191,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full">
                 <Calendar className="h-5 w-5 text-teal-400" />
-                <span>July 14-25, 2023</span>
+                <span>July 14-25, 2025</span>
               </div>
             </motion.div>
           </motion.div>

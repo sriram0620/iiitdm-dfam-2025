@@ -126,7 +126,7 @@ export default function Speakers() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -139,14 +139,17 @@ export default function Speakers() {
                 "group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500",
                 "border border-slate-100",
                 "transform hover:-translate-y-2",
+                "w-full"
               )}
             >
-              <div className="aspect-[3/4] relative">
+              <div className="aspect-[3/4] relative w-full">
                 <Image
                   src={speaker.image || "/placeholder.svg?height=600&width=400&query=professional%20portrait"}
                   alt={speaker.name}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority={index < 3}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-6">

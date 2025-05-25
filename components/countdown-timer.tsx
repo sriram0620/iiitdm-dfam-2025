@@ -10,8 +10,8 @@ export default function CountdownTimer() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
-  // Set the target date to July 10, 2023 (registration deadline)
-  const targetDate = new Date("2023-07-10T23:59:59").getTime()
+  // Set the target date to July 10, 2025 (registration deadline)
+  const targetDate = new Date("2025-07-10T23:59:59").getTime()
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -103,7 +103,7 @@ export default function CountdownTimer() {
 
               <div className="flex items-center mb-8">
                 <Calendar className="h-5 w-5 text-teal-400 mr-2" />
-                <span className="text-white/80">Deadline: July 10, 2023</span>
+                <span className="text-white/80">Deadline: July 10, 2025</span>
               </div>
 
               <Button

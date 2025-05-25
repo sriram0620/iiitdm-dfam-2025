@@ -138,7 +138,7 @@ export default function TopicsList() {
           </h2>
 
           <p className="text-lg text-slate-600">
-            Explore the comprehensive curriculum of advanced topics covered in the DfAM 2023 program.
+            Explore the comprehensive curriculum of advanced topics covered in the DfAM 2025 program.
           </p>
         </motion.div>
 
