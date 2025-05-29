@@ -162,53 +162,6 @@ export default function Gallery() {
             ))}
           </div>
         </motion.div>
-
-        {/* Gallery Grid */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 gap-4"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.5 },
-                },
-              }}
-              className="relative group cursor-pointer overflow-hidden rounded-xl"
-              onClick={() => openLightbox(index)}
-            >
-              <div className="aspect-square relative">
-                <Image
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="p-3 bg-white/20 backdrop-blur-md rounded-full">
-                    <ZoomIn className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Lightbox */}

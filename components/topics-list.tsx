@@ -16,7 +16,7 @@ export default function TopicsList() {
       description:
         "Design shells and assign material for realizing full-color multi-material products with digital materials.",
       icon: <Boxes className="h-10 w-10 text-teal-500" />,
-      image: "/topics/multi-materials-new.png",
+      image: "/images/i1.jpg",
       gradient: "from-blue-500/20 to-purple-500/20",
     },
     {
@@ -24,7 +24,7 @@ export default function TopicsList() {
       description:
         "Integrate as many technical functions as possible into as few parts as possible to take advantage of design freedom in AM.",
       icon: <Cpu className="h-10 w-10 text-teal-500" />,
-      image: "/topics/functional-integration-new.png",
+      image: "/images/i2.jpg",
       gradient: "from-green-500/20 to-teal-500/20",
     },
     {
@@ -32,7 +32,7 @@ export default function TopicsList() {
       description:
         "Customize the design for personalization and flexibility and at the same time achieve the low cost of mass production.",
       icon: <RefreshCw className="h-10 w-10 text-teal-500" />,
-      image: "/topics/mass-customization-new.png",
+      image: "/images/i3.jpg",
       gradient: "from-orange-500/20 to-red-500/20",
     },
     {
@@ -40,7 +40,7 @@ export default function TopicsList() {
       description:
         "Achieve part count reduction for ease of assembly and simplify the product design yet introduce more shape complexity.",
       icon: <Maximize2 className="h-10 w-10 text-teal-500" />,
-      image: "/topics/part-consolidation-new.png",
+      image: "/images/i4.jpg",
       gradient: "from-purple-500/20 to-pink-500/20",
     },
     {
@@ -48,7 +48,7 @@ export default function TopicsList() {
       description:
         "Introduce intricate lattice structures with structural optimization to reduce weight and efficiency of mobility solutions.",
       icon: <Zap className="h-10 w-10 text-teal-500" />,
-      image: "/topics/light-weighting-new.png",
+      image: "/images/i5.jpg",
       gradient: "from-yellow-500/20 to-orange-500/20",
     },
     {
@@ -56,7 +56,7 @@ export default function TopicsList() {
       description:
         "Design multi-material and gradient structures to take advantage of possible material complexity in AM.",
       icon: <Grid3X3 className="h-10 w-10 text-teal-500" />,
-      image: "/topics/heterogeneous-modeling-new.png",
+      image: "/images/i6.jpg",
       gradient: "from-indigo-500/20 to-blue-500/20",
     },
     {
@@ -64,14 +64,14 @@ export default function TopicsList() {
       description:
         "Iterative design process that outputs optimized design that meets real-world manufacturing constraints.",
       icon: <Workflow className="h-10 w-10 text-teal-500" />,
-      image: "/topics/generative-design-new.png",
+      image: "/images/i7.jpg",
       gradient: "from-emerald-500/20 to-green-500/20",
     },
     {
       title: "Hierarchical Structures",
       description: "Design repeating structures in macro, meso, micro, and nano scales to get superior performance.",
       icon: <Repeat className="h-10 w-10 text-teal-500" />,
-      image: "/topics/hierarchical-structures-new.png",
+      image: "/images/i8.jpg",
       gradient: "from-rose-500/20 to-pink-500/20",
     },
     {
@@ -79,7 +79,7 @@ export default function TopicsList() {
       description:
         "Optimize material layout within a given space, for a given set of loads, boundary conditions and constraints.",
       icon: <Layers className="h-10 w-10 text-teal-500" />,
-      image: "/topics/topology-optimization-new.png",
+      image: "/images/i9.jpg",
       gradient: "from-cyan-500/20 to-teal-500/20",
     },
   ]

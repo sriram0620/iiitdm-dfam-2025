@@ -126,18 +126,23 @@ export default function Hero() {
             className="flex flex-col items-center text-center"
           >
             <div className="inline-block mb-6 px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-              <span className="text-teal-400 font-medium">July 14-25, 2025 (Excluding July 20)</span>
+              <span className="text-teal-400 font-medium">July 14-25, 2025</span>
             </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+              className="flex flex-col items-center text-center mb-12"
             >
-              AI Enabled Design for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500">Additive</span>{" "}
-              Manufacturing
+              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-2">
+                AI Enabled
+              </span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                Design for{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500">Additive</span>{" "}
+                Manufacturing
+              </span>
             </motion.h1>
 
             <motion.p
@@ -146,8 +151,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl"
             >
-              An intensive short-term training program exploring the cutting-edge techniques and applications of 3D
-              printing technology.
+              An online Short-Term Training Program (STTP) exploring the tools and techniques design for additive manufacturuing.
             </motion.p>
 
             <motion.div

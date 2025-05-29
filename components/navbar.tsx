@@ -19,7 +19,7 @@ export default function Navbar() {
     { id: "about", label: "About", href: "/#about" },
     { id: "topics", label: "Topics", href: "/#topics" },
     { id: "registration", label: "Registration", href: "/#registration" },
-    { id: "schedule", label: "Schedule", href: "/#schedule" },
+    // { id: "schedule", label: "Schedule", href: "/#schedule" },
     { id: "payment", label: "Payment Details", href: "/payment" },
     { id: "testimonials", label: "Testimonials", href: "/testimonials" },
     { id: "contact", label: "Contact", href: "/contact" },

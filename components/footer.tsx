@@ -63,7 +63,7 @@ export default function Footer() {
               additive manufacturing technology.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
+              <a href="https://www.facebook.com/IIITDMKancheepuram" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
                 <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -72,12 +72,12 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
+              <a href="https://twitter.com/IIITDMK" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
                 <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
+              <a href="https://github.com/IIITDMK" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
                 <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -86,7 +86,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-              <a href="#" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
+              <a href="https://www.linkedin.com/school/iiitdm-kancheepuram/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
                 <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     fillRule="evenodd"
@@ -105,16 +105,18 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               {[
-                { label: "Brochure", href: "#" },
-                { label: "Registration Form", href: "#registration" },
-                { label: "Payment Information", href: "#" },
-                { label: "Reaching IIITDM Kancheepuram", href: "#" },
-                { label: "Accommodation", href: "#" },
+                { label: "Brochure", href: "/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf" },
+                { label: "Registration Form", href: "https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895" },
+                { label: "Payment Information", href: "./payment" },
+                { label: "Reaching IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/ContactUs.php" },
+                // { label: "Accommodation", href: "https://www.iiitdm.ac.in/Accommodation.php" },
               ].map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="text-slate-400 hover:text-teal-400 transition-colors text-sm flex items-center group"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     <ChevronRight className="h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                     {link.label}
@@ -132,15 +134,17 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "About DfAM", href: "#about" },
-                { label: "Center for Smart Manufacturing", href: "#" },
-                { label: "About Coordinator", href: "#" },
-                { label: "About IIITDM Kancheepuram", href: "#" },
-                { label: "Past Programs", href: "#" },
+                { label: "Department of Mechanical Engineering", href: "https://www.iiitdm.ac.in/Department/ME.php" },
+                { label: "About Coordinator", href: "#speakers" },
+                { label: "About IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/AboutUs.php" },
+                { label: "Past Programs", href: "#gallery" },
               ].map((link, index) => (
                 <li key={index}>
                   <Link
                     href={link.href}
                     className="text-slate-400 hover:text-teal-400 transition-colors text-sm flex items-center group"
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     <ChevronRight className="h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform duration-300" />
                     {link.label}
@@ -165,13 +169,17 @@ export default function Footer() {
                   <br />
                   IIITDM Kancheepuram
                   <br />
-                  Chennai – 600127, India
+                  Melakottaiyur, Nellikuppam Road
+                  <br />
+                  Kancheepuram - 631 561
+                  <br />
+                  Tamil Nadu, India
                 </address>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-teal-400 mr-3" />
-                <a href="tel:+914427476364" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
-                  +91 44 2747 6364
+                <a href="tel:+914427476300" className="text-slate-400 hover:text-teal-400 transition-colors text-sm">
+                  +91 44 2747 6300
                 </a>
               </li>
               <li className="flex items-center">

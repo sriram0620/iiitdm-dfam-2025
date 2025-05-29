@@ -305,7 +305,7 @@ export default function Schedule() {
           </h2>
 
           <p className="text-lg text-slate-600 mb-4">
-            11 days of intensive learning, hands-on workshops, and networking opportunities.
+            11 days of Online learning, hands-on workshops, and networking opportunities.
           </p>
 
           <div className="bg-amber-50 p-4 rounded-xl inline-block">

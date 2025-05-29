@@ -153,7 +153,7 @@ export default function Faq() {
             <div className="inline-block bg-teal-50 px-6 py-4 rounded-xl">
               <p className="text-teal-700 font-medium">
                 Still have questions?{" "}
-                <a href="#contact" className="text-teal-600 underline hover:text-teal-800">
+                <a href="./contact" className="text-teal-600 underline hover:text-teal-800">
                   Contact us
                 </a>{" "}
                 for more information.

@@ -29,24 +29,6 @@ export default function About() {
       description: "Discover innovative approaches to design that leverage the capabilities of 3D printing.",
       image: "/3d-printing-innovation.jpg",
     },
-    {
-      icon: <Target className="h-10 w-10 text-teal-500" />,
-      title: "Practical Skills",
-      description: "Gain hands-on experience with industry-standard tools and methodologies.",
-      image: "/3d-printing-practical.jpg",
-    },
-    {
-      icon: <Zap className="h-10 w-10 text-teal-500" />,
-      title: "Future Technologies",
-      description: "Stay ahead with knowledge of emerging trends and technologies in additive manufacturing.",
-      image: "/3d-printing-future.jpg",
-    },
-    {
-      icon: <Users className="h-10 w-10 text-teal-500" />,
-      title: "Networking",
-      description: "Connect with industry experts and peers in the field of additive manufacturing.",
-      image: "/3d-printing-networking.png",
-    },
   ]
 
   const containerVariants = {
@@ -101,16 +83,22 @@ export default function About() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">DfAM 2025</span>
           </h2>
 
-          <div className="text-lg text-slate-600">
-            <p className="mb-4">
-              This workshop focuses on DfAM methods that identifies opportunities for increased complexities in design.
-              The aim of the workshop is to understand the new found design freedom in Additive Manufacturing and
-              optimizing the existing design using various tools.
+          <div className="text-lg text-slate-600 space-y-6">
+            <p className="leading-relaxed">
+              AI has become quintessential tool to optimize and generate designs for increased functional integration,
+              product structure, part geometry and high stiffness designed materials. Today's designers and engineers are
+              tasked with burden of nuanced understanding of the algorithms & methods for AI-enabled design for AM (AI
+              DfAM).
             </p>
-            <p>
-              Faculty, Research scholars, Postgraduate and Graduate students from various institutions and delegates
-              from the industries can register for the program. An understanding of various design methods and,
-              computer-aided design are the prerequisites for attending the program.
+            <p className="leading-relaxed">
+              This course provides a practical approach to understanding of applied design principles and algorithms to
+              optimize existing design or generate a whole new design with fraction of cost compared to conventional
+              design/redesign practices. Automotive, Aerospace, Healthcare and Consumer electronic industries are
+              embracing this new trend design freedom using AI-DfAM tools and techniques.
+            </p>
+            <p className="leading-relaxed">
+              The participants of this workshop will learn to adopt the best practices to focus early problems in design
+              for AM but also exploit the degree of design freedom with metal and polymer AM processes.
             </p>
           </div>
         </motion.div>
@@ -126,10 +114,15 @@ export default function About() {
               key={index}
               variants={itemVariants}
               className={cn(
-                "group relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500",
-                "border border-slate-100 hover:border-teal-100",
-                "transform hover:-translate-y-2",
+                "group relative bg-white rounded-2xl p-8",
+                "border border-slate-100",
+                "transform transition-all duration-500",
+                "hover:shadow-2xl hover:shadow-teal-100/50",
+                "hover:-translate-y-2",
                 "overflow-hidden",
+                "before:absolute before:inset-0 before:bg-gradient-to-br before:from-teal-50/0 before:to-teal-50/0",
+                "before:transition-all before:duration-500",
+                "hover:before:from-teal-50/50 hover:before:to-teal-50/20",
               )}
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
@@ -137,11 +130,21 @@ export default function About() {
               </div>
 
               <div className="relative z-10">
-                <div className="mb-6 p-3 bg-teal-50 rounded-xl inline-block">{feature.icon}</div>
+                <div className="mb-6 p-3 bg-teal-50 rounded-xl inline-block group-hover:bg-teal-100 transition-colors duration-300">
+                  <motion.div
+                    className="text-teal-500"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    {feature.icon}
+                  </motion.div>
+                </div>
                 <h3 className="text-xl font-bold mb-3 text-slate-800 group-hover:text-teal-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-slate-600">{feature.description}</p>
+                <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
+                  {feature.description}
+                </p>
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-teal-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>

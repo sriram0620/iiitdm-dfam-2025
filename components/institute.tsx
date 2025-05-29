@@ -46,7 +46,7 @@ export default function Institute() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/3] relative">
-                <Image src="/iiitdm-campus.png" alt="IIITDM Kancheepuram Campus" fill className="object-cover" />
+                <Image src="/images/l1.jpg" alt="IIITDM Kancheepuram Campus" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
               </div>
 
@@ -58,7 +58,8 @@ export default function Institute() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">IIITDM Kancheepuram</h3>
-                <p className="text-white/80">A Center of Excellence for Design and Manufacturing</p>
+                <p className="text-white/80">An Institute of national importance established by Ministry of Education 
+                </p>
               </div>
             </div>
 
@@ -102,9 +103,9 @@ export default function Institute() {
             </div>
 
             <div className="bg-gradient-to-br from-teal-50 to-teal-100/50 rounded-2xl p-6 shadow-lg border border-teal-100">
-              <h4 className="text-xl font-bold mb-4 text-slate-800">Center for Smart Manufacturing</h4>
+              <h4 className="text-xl font-bold mb-4 text-slate-800">Department of Mechanical Engineering </h4>
               <p className="text-slate-700 mb-6">
-                The Center for Smart Manufacturing at IIITDM Kancheepuram is dedicated to advancing manufacturing
+                The Department of Mechanical Engineering at IIITDM Kancheepuram is dedicated to advancing manufacturing
                 technologies through research, education, and industry collaboration. The center focuses on additive
                 manufacturing, smart materials, and digital manufacturing processes.
               </p>

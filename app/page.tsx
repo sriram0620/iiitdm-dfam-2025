@@ -23,10 +23,10 @@ export default function Home() {
       {/* <PricingOverview /> */}
       <TopicsList />
       <Gallery />
-      <Speakers />
+      {/* <Speakers /> */}
       <Registration />
       <CountdownTimer />
-      <Schedule />
+      {/* <Schedule /> */}
       <Resources />
       <Institute />
       <Footer />

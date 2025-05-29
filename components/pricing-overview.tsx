@@ -15,7 +15,7 @@ export default function PricingOverview() {
     {
       category: "Students",
       price: "₹1,770",
-      originalPrice: "₹1,000",
+      originalPrice: "",
       icon: <GraduationCap className="h-8 w-8 text-teal-500" />,
       description: "UG/PG/Research scholars",
       color: "from-blue-500 to-blue-600",
@@ -23,7 +23,7 @@ export default function PricingOverview() {
     {
       category: "Faculty",
       price: "₹3,540",
-      originalPrice: "₹3,000",
+      originalPrice: "",
       icon: <Users className="h-8 w-8 text-teal-500" />,
       description: "Academic institutions",
       color: "from-teal-500 to-teal-600",
@@ -32,7 +32,7 @@ export default function PricingOverview() {
     {
       category: "Industry",
       price: "₹8,260",
-      originalPrice: "₹7,000",
+      originalPrice: "",
       icon: <Building2 className="h-8 w-8 text-teal-500" />,
       description: "Professionals & others",
       color: "from-purple-500 to-purple-600",

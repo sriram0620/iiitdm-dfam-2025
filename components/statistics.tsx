@@ -11,7 +11,7 @@ export default function Statistics() {
   const [hasAnimated, setHasAnimated] = useState(false)
 
   const stats = [
-    { icon: <Calendar className="h-8 w-8" />, value: 11, label: "Days", suffix: "", description: "Intensive learning" },
+    { icon: <Calendar className="h-8 w-8" />, value: 11, label: "Days", suffix: "", description: "Online learning" },
     {
       icon: <BookOpen className="h-8 w-8" />,
       value: 20,
@@ -24,14 +24,14 @@ export default function Statistics() {
       value: 60,
       label: "Participants",
       suffix: "",
-      description: "Limited seats available",
+      description: "First come, first serve basis",
     },
     {
       icon: <Layers className="h-8 w-8" />,
       value: 10,
       label: "Topics",
       suffix: "+",
-      description: "Comprehensive curriculum",
+      description: "Interactive sessions",
     },
   ]
 
@@ -92,8 +92,8 @@ export default function Statistics() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-500">Highlights</span>
           </h2>
           <p className="text-lg text-white/80">
-            An immersive experience designed to provide comprehensive knowledge and hands-on skills in additive
-            manufacturing.
+            An immersive online experience designed to provide comprehensive knowledge and hands-on skills in additive
+            manufacturing through interactive sessions.
           </p>
         </motion.div>
 
