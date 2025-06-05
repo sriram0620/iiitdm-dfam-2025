@@ -144,6 +144,19 @@ export default function Navbar() {
               )}
             </Link>
           ))}
+          {/* Add Brochure button */}
+          <a
+            href="/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf"
+            download
+            className={cn(
+              "relative px-4 py-2 font-medium text-sm transition-colors duration-300 rounded-md",
+              pathname === "/" && !scrolled
+                ? "text-white/80 hover:text-white hover:bg-white/10"
+                : "text-slate-600 hover:text-teal-600 hover:bg-slate-100"
+            )}
+          >
+            Brochure
+          </a>
           <Button
             className="ml-4 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 border-0"
             size="sm"
@@ -195,6 +208,16 @@ export default function Navbar() {
                   <ChevronRight size={18} className="text-slate-400" />
                 </Link>
               ))}
+              {/* Add Brochure link */}
+              <a
+                href="/AI_DfAM_Brochure_2025_updated_forwebsite.pdf"
+                download
+                className="flex items-center justify-between py-4 px-2 border-b border-slate-100 dark:border-slate-800 text-slate-800 dark:text-white"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="font-medium">Brochure</span>
+                <ChevronRight size={18} className="text-slate-400" />
+              </a>
               <Button
                 className="mt-8 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg border-0"
                 onClick={() => setIsOpen(false)}

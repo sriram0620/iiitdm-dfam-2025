@@ -70,13 +70,25 @@ export default function Contact() {
 
               <div className="flex items-start space-x-4">
                 <div className="bg-teal-500/20 p-3 rounded-full text-teal-400">
+                  <Phone className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg">Phone (Research Scholar)</h4>
+                  <p className="text-slate-300">8220916354</p>
+                  <p className="text-sm text-slate-400 mt-1">PRABU A, Research Scholar, Department of Mechanical Engineering, IIITDM,Kancheepuram, Chennai-600127</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-teal-500/20 p-3 rounded-full text-teal-400">
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-lg">Address</h4>
-                  <p className="text-slate-300">IIITDM Kancheepuram</p>
-                  <p className="text-slate-300">Melakottaiyur, Nellikuppam Road</p>
-                  <p className="text-slate-300">Kancheepuram - 631 561</p>
+                  <p className="text-slate-300">Design for Adiitive Manufacturing Lab,</p>
+                  <p className="text-slate-300"> Department of Mechanical Enginering , IIITDM,Kancheepuram,</p>
+                  <p className="text-slate-300">Near kandigai,Vandaloor-Kelambakkam road</p>
+                  <p className="text-slate-300">Chennai- 600127</p>
                   <p className="text-slate-300">Tamil Nadu, India</p>
                 </div>
               </div>

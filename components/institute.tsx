@@ -46,7 +46,7 @@ export default function Institute() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-[4/3] relative">
-                <Image src="/images/l1.jpg" alt="IIITDM Kancheepuram Campus" fill className="object-cover" />
+                <Image src="campus.jpg" alt="IIITDM Kancheepuram Campus" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
               </div>
 

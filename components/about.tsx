@@ -73,33 +73,40 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block mb-4">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-teal-50 mb-4">
-              <Printer3d className="h-8 w-8 text-teal-500" />
+            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-teal-50 mb-4 group hover:bg-teal-100 transition-colors duration-300">
+              <Printer3d className="h-8 w-8 text-teal-500 group-hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800 group">
             About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">DfAM 2025</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600 group-hover:from-teal-600 group-hover:to-teal-700 transition-all duration-300">
+              DfAM 2025
+            </span>
           </h2>
 
           <div className="text-lg text-slate-600 space-y-6">
-            <p className="leading-relaxed">
-              AI has become quintessential tool to optimize and generate designs for increased functional integration,
-              product structure, part geometry and high stiffness designed materials. Today's designers and engineers are
-              tasked with burden of nuanced understanding of the algorithms & methods for AI-enabled design for AM (AI
-              DfAM).
-            </p>
-            <p className="leading-relaxed">
-              This course provides a practical approach to understanding of applied design principles and algorithms to
-              optimize existing design or generate a whole new design with fraction of cost compared to conventional
-              design/redesign practices. Automotive, Aerospace, Healthcare and Consumer electronic industries are
-              embracing this new trend design freedom using AI-DfAM tools and techniques.
-            </p>
-            <p className="leading-relaxed">
-              The participants of this workshop will learn to adopt the best practices to focus early problems in design
-              for AM but also exploit the degree of design freedom with metal and polymer AM processes.
-            </p>
+            <motion.p 
+              className="leading-relaxed group hover:text-slate-800 transition-colors duration-300"
+              whileHover={{ scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              Artificial Intelligence (AI) has become an essential tool in optimizing and generating advanced designs that enhance functional integration, part geometry, product structure, and material stiffness. Modern designers and engineers face the challenge of mastering AI-driven methods and algorithms for Design for Additive Manufacturing (AI DfAM).
+            </motion.p>
+            <motion.p 
+              className="leading-relaxed group hover:text-slate-800 transition-colors duration-300"
+              whileHover={{ scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              This session offers a hands-on approach to applying design principles and AI algorithms to either improve existing designs or create entirely new ones at a significantly lower cost than traditional methods. Industries such as Automotive, Aerospace, Healthcare, and Consumer Electronics are rapidly adopting AI-DfAM to unlock unprecedented design freedom. Participants will gain practical insights into early-stage design problem-solving and learn to leverage the full potential of metal and polymer additive manufacturing processes.
+            </motion.p>
+            <motion.p 
+              className="leading-relaxed group hover:text-slate-800 transition-colors duration-300"
+              whileHover={{ scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+             
+            </motion.p>
           </div>
         </motion.div>
 

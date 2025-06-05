@@ -98,7 +98,7 @@ export default function CountdownTimer() {
               <p className="text-white/80 mb-6">
                 {isExpired
                   ? "The registration deadline has passed. Please contact us for late registration possibilities."
-                  : "Secure your spot in the DfAM 2021 program before registration closes. Limited seats available!"}
+                  : "Secure your spot in the DfAM 2025 program before registration closes. Limited seats available!"}
               </p>
 
               <div className="flex items-center mb-8">

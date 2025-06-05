@@ -59,8 +59,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-400 text-sm mb-6">
-              A comprehensive short-term training program exploring the cutting-edge techniques and applications of
-              additive manufacturing technology.
+            An online Short-Term Training Program (STTP) exploring the tools and techniques design for additive manufacturuing
             </p>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/IIITDMKancheepuram" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors duration-300">
@@ -108,7 +107,7 @@ export default function Footer() {
                 { label: "Brochure", href: "/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf" },
                 { label: "Registration Form", href: "https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895" },
                 { label: "Payment Information", href: "./payment" },
-                { label: "Reaching IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/ContactUs.php" },
+                { label: "Reaching IIITDM Kancheepuram", href: "https://iiitk.ac.in/Contact-Us/page" },
                 // { label: "Accommodation", href: "https://www.iiitdm.ac.in/Accommodation.php" },
               ].map((link, index) => (
                 <li key={index}>
