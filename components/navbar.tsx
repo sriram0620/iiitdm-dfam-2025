@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("home")
   const pathname = usePathname()
@@ -71,19 +71,6 @@ export default function Navbar() {
       setActiveSection("payment")
     }
   }, [pathname])
-
-  // Prevent scrolling when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    // Clean up effect
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
 
   return (
     <header
@@ -186,68 +173,84 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Navigation Toggle */}
-        <button
-          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md z-[60] relative flex-shrink-0"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? (
-            <X className={scrolled ? "text-slate-800" : "text-white"} size={20} />
-          ) : (
-            <Menu className={scrolled ? "text-slate-800" : "text-white"} size={20} />
-          )}
-        </button>
-      </div>
+        <Sheet>
+          <SheetTrigger asChild>
+            <button
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md z-[60] relative flex-shrink-0"
+              aria-label="Toggle menu"
+            >
+              <Menu className={scrolled ? "text-slate-800" : "text-white"} size={20} />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-white flex flex-col">
+            {/* Header with logo and close button */}
+            <div className="flex items-center justify-between p-4 border-b">
+              <Link href="/" className="flex items-center space-x-2">
+                 <div className="relative w-8 h-8 overflow-hidden rounded-full bg-teal-500">
+                    <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xs">
+                      DfAM
+                    </div>
+                  </div>
+                  <span className="font-bold text-slate-800">DfAM <span className="text-teal-500">2025</span></span>
+              </Link>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <X className="h-4 w-4" />
+                </Button>
+              </SheetTrigger>
+            </div>
 
-      {/* Mobile Navigation Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="lg:hidden fixed inset-0 top-[64px] bg-white z-[51] overflow-y-auto"
-            initial={{ opacity: 0, x: -300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -300 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            <nav className="flex flex-col p-6">
-              {sections.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="flex items-center justify-between py-4 px-2 border-b border-slate-100 dark:border-slate-800 text-slate-800 dark:text-white"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <span className="font-medium">{item.label}</span>
-                  <ChevronRight size={18} className="text-slate-400" />
-                </Link>
-              ))}
-              {/* Add Brochure link */}
-              <a
-                href="/AI_DfAM_Brochure_2025_updated_forwebsite.pdf"
-                download
-                className="flex items-center justify-between py-4 px-2 border-b border-slate-100 dark:border-slate-800 text-slate-800 dark:text-white"
-                onClick={() => setIsOpen(false)}
-              >
-                <span className="font-medium">Brochure</span>
-                <ChevronRight size={18} className="text-slate-400" />
-              </a>
-              <Button
-                className="mt-8 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg border-0"
-                onClick={() => setIsOpen(false)}
-                asChild
-              >
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Register Now
-                </a>
-              </Button>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+
+            {/* Navigation Items */}
+            <div className="flex-1 overflow-y-auto">
+              <nav className="flex flex-col p-4 space-y-1">
+                {sections.map((item) => (
+                   <SheetTrigger asChild key={item.id}>
+                      <Link
+                        href={item.href}
+                        className="flex items-center justify-between py-3 px-2 text-slate-700 hover:text-teal-600 transition-colors"
+                      >
+                        <span className="font-medium">{item.label}</span>
+                        <ChevronRight size={18} className="text-slate-400" />
+                      </Link>
+                   </SheetTrigger>
+                ))}
+                {/* Add Brochure link */}
+                 <SheetTrigger asChild>
+                    <a
+                      href="/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf"
+                      download
+                      className="flex items-center justify-between py-3 px-2 text-slate-700 hover:text-teal-600 transition-colors"
+                    >
+                      <span className="font-medium">Brochure</span>
+                      <ChevronRight size={18} className="text-slate-400" />
+                    </a>
+                 </SheetTrigger>
+              </nav>
+            </div>
+
+            {/* Register Now Button */}
+            <div className="p-4 border-t">
+               <SheetTrigger asChild>
+                   <Button
+                    className="w-full bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white shadow-lg border-0"
+                    asChild
+                  >
+                    <a
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register Now
+                    </a>
+                  </Button>
+               </SheetTrigger>
+            </div>
+
+          </SheetContent>
+        </Sheet>
+      </div>
     </header>
   )
 }
