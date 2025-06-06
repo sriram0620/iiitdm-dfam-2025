@@ -15,7 +15,7 @@ export default function Resources() {
       title: "Program Brochure",
       description: "Comprehensive overview of the DfAM 2025 program, including schedule, topics, and speakers.",
       icon: <FileText className="h-10 w-10 text-teal-500" />,
-      link: "/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf",
+      link: "AI_DfAM_Brochure_2025_updated_forwebsite,.pdf",
       buttonText: "Download PDF",
       buttonIcon: <Download className="h-4 w-4 mr-2" />,
       category: "document",

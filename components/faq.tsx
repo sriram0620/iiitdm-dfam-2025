@@ -26,11 +26,11 @@ export default function Faq() {
       answer:
         "Yes, certificates of participation will be provided to all attendees who complete the program. The certificates will be issued by IIITDM Kancheepuram, which is an Institute of National Importance.",
     },
-    {
-      question: "Are there any accommodation facilities available?",
-      answer:
-        "Limited accommodation facilities are available on campus for outstation participants on a first-come, first-served basis. Please indicate your accommodation requirements during registration. Additional accommodation options near the campus can be provided upon request.",
-    },
+    // {
+    //   question: "Are there any accommodation facilities available?",
+    //   answer:
+    //     "Limited accommodation facilities are available on campus for outstation participants on a first-come, first-served basis. Please indicate your accommodation requirements during registration. Additional accommodation options near the campus can be provided upon request.",
+    // },
     {
       question: "What software tools will be covered in the program?",
       answer:
@@ -41,11 +41,11 @@ export default function Faq() {
       answer:
         "Cancellations made before July 5, 2025 will receive a 50% refund. No refunds will be provided for cancellations after this date. However, substitution of participants from the same organization is allowed with prior notification.",
     },
-    {
-      question: "Will the program include hands-on sessions?",
-      answer:
-        "Yes, the program includes multiple hands-on sessions where participants will work on real design challenges using various software tools. Participants will also have the opportunity to see 3D printing demonstrations.",
-    },
+    // {
+    //   question: "Will the program include hands-on sessions?",
+    //   answer:
+    //     "Yes, the program includes multiple hands-on sessions where participants will work on real design challenges using various software tools. Participants will also have the opportunity to see 3D printing demonstrations.",
+    // },
     {
       question: "How can I reach IIITDM Kancheepuram?",
       answer:

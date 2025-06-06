@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
@@ -15,36 +15,15 @@ export default function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
   const images = [
-    {
-      src: "/3d-printing-gallery-1.png",
-      alt: "3D printed prototype",
-      caption: "Advanced prototyping with 3D printing technology",
-    },
-    {
-      src: "/3d-printing-gallery-2.png",
-      alt: "Design optimization process",
-      caption: "Topology optimization for lightweight structures",
-    },
-    {
-      src: "/3d-printing-gallery-3.png",
-      alt: "Additive manufacturing workshop",
-      caption: "Hands-on workshop session from previous program",
-    },
-    {
-      src: "/3d-printing-gallery-4.png",
-      alt: "Complex 3D printed part",
-      caption: "Complex geometries enabled by additive manufacturing",
-    },
-    {
-      src: "/3d-printing-gallery-5.png",
-      alt: "3D printing in action",
-      caption: "Industrial 3D printing process demonstration",
-    },
-    {
-      src: "/3d-printing-gallery-6.png",
-      alt: "Design software demonstration",
-      caption: "CAD software specialized for additive manufacturing",
-    },
+    { src: "/event/p1.JPG", alt: "Previous event image 1", caption: "" },
+    { src: "/event/p2.JPG", alt: "Previous event image 2", caption: "" },
+    { src: "/event/p3.JPG", alt: "Previous event image 3", caption: "" },
+    { src: "/event/p4.JPG", alt: "Previous event image 4", caption: "" },
+    { src: "/event/p5.JPG", alt: "Previous event image 5", caption: "" },
+    { src: "/event/p6.JPG", alt: "Previous event image 6", caption: "" },
+    { src: "/event/p7.JPG", alt: "Previous event image 7", caption: "" },
+    { src: "/event/p8.JPG", alt: "Previous event image 8", caption: "" },
+    { src: "/event/p9.JPG", alt: "Previous event image 9", caption: "" },
   ]
 
   const nextImage = () => {
@@ -54,6 +33,14 @@ export default function Gallery() {
   const prevImage = () => {
     setActiveIndex((prev) => (prev - 1 + images.length) % images.length)
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [activeIndex, images.length])
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index)
@@ -75,7 +62,7 @@ export default function Gallery() {
   }
 
   return (
-    <section ref={sectionRef} className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="gallery" ref={sectionRef} className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-30">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -96,8 +83,8 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold mb-6 text-slate-800">
-            Explore{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">Our Work</span>
+            Previous Event{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">Glimpses</span>
           </h2>
           <p className="text-lg text-slate-600">
             Discover the innovative projects and technologies you'll explore during the DfAM 2025 program.

@@ -107,7 +107,7 @@ export default function Footer() {
                 { label: "Brochure", href: "/AI_DfAM_Brochure_2025_updated_forwebsite,.pdf" },
                 { label: "Registration Form", href: "https://docs.google.com/forms/d/e/1FAIpQLSdzDzhDnS5ldEWWGh8lH0qUHQMf2_k11TuHXB9xLi9GHq7EXQ/viewform?usp=sharing&ouid=101024081643276331895" },
                 { label: "Payment Information", href: "./payment" },
-                { label: "Reaching IIITDM Kancheepuram", href: "https://iiitk.ac.in/Contact-Us/page" },
+                { label: "Reaching IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/contact-us" },
                 // { label: "Accommodation", href: "https://www.iiitdm.ac.in/Accommodation.php" },
               ].map((link, index) => (
                 <li key={index}>
@@ -133,9 +133,9 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "About DfAM", href: "#about" },
-                { label: "Department of Mechanical Engineering", href: "https://www.iiitdm.ac.in/Department/ME.php" },
-                { label: "About Coordinator", href: "#speakers" },
-                { label: "About IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/AboutUs.php" },
+                { label: "Department of Mechanical Engineering", href: "https://www.iiitdm.ac.in/academics/departments/mech" },
+                { label: "About Coordinator", href: "https://www.iiitdm.ac.in/people/faculty/skumaran@iiitdm.ac.in" },
+                { label: "About IIITDM Kancheepuram", href: "https://www.iiitdm.ac.in/institute/about" },
                 { label: "Past Programs", href: "#gallery" },
               ].map((link, index) => (
                 <li key={index}>
@@ -164,13 +164,13 @@ export default function Footer() {
                 <address className="not-italic text-slate-400 text-sm">
                   Dr. Senthilkumaran Kumaraguru
                   <br />
-                  Center for Smart Manufacturing
+                  Design for Adiitive Manufacturing Lab,
                   <br />
-                  IIITDM Kancheepuram
+                  Department of Mechanical Enginering , IIITDM,Kancheepuram,
                   <br />
-                  Melakottaiyur, Nellikuppam Road
+                  Near kandigai,Vandaloor-Kelambakkam road
                   <br />
-                  Kancheepuram - 631 561
+                  Chennai- 600127
                   <br />
                   Tamil Nadu, India
                 </address>

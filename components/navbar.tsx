@@ -72,6 +72,19 @@ export default function Navbar() {
     }
   }, [pathname])
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    // Clean up effect
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <header
       className={cn(
@@ -83,7 +96,7 @@ export default function Navbar() {
           : "bg-white/90 backdrop-blur-md shadow-lg py-3"
       )}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 flex items-center justify-between z-[60]">
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="relative w-10 h-10 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md transform transition-all duration-500 group-hover:scale-110"></div>
@@ -174,7 +187,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md"
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-md z-[60] relative flex-shrink-0"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -190,7 +203,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="lg:hidden fixed inset-0 top-[72px] bg-white dark:bg-slate-900 z-40"
+            className="lg:hidden fixed inset-0 top-[64px] bg-white z-[51] overflow-y-auto"
             initial={{ opacity: 0, x: -300 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -300 }}

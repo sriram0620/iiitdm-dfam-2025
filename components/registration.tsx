@@ -124,14 +124,6 @@ export default function Registration() {
         >
           {plans.map((plan, index) => (
             <motion.div key={index} variants={itemVariants} className="relative">
-              {plan.featured && (
-                <div className="absolute -top-5 inset-x-0 flex justify-center">
-                  <div className="bg-gradient-to-r from-teal-500 to-teal-600 text-white text-sm font-bold py-1 px-4 rounded-full shadow-lg flex items-center">
-                    <Star className="h-4 w-4 mr-1" /> MOST POPULAR
-                  </div>
-                </div>
-              )}
-
               <Card
                 className={cn(
                   "overflow-hidden transition-all duration-500 hover:shadow-2xl h-full",
