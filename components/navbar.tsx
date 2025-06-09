@@ -88,7 +88,7 @@ export default function Navbar() {
           <div className="relative w-10 h-10 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 rounded-md transform transition-all duration-500 group-hover:scale-110"></div>
             <div className="absolute inset-1 bg-white dark:bg-slate-900 rounded-sm flex items-center justify-center">
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-teal-500 to-teal-700 text-sm">
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-teal-500 to-teal-700 text-[0.7rem] tracking-tight px-0.5">
                 DfAM
               </span>
             </div>
