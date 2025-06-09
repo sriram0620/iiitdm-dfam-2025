@@ -6,7 +6,7 @@ export default function PaymentPage() {
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
-      <div className="pt-24">
+      <div className="pt-10">
         <PaymentDetails />
       </div>
       <Footer />

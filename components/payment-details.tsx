@@ -138,30 +138,48 @@ export default function PaymentDetails() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block mb-4">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-teal-50 mb-4">
-              <CreditCard className="h-8 w-8 text-teal-500" />
+          {/* Enhanced Header Section */}
+          <div className="relative mb-12">
+            {/* Decorative elements */}
+            <div className="absolute -top-10 -left-10 w-20 h-20 bg-teal-100 rounded-full opacity-50 blur-xl"></div>
+            <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-blue-100 rounded-full opacity-50 blur-xl"></div>
+            
+            {/* Main icon with enhanced styling */}
+            <div className="relative inline-block mb-6">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full blur-lg opacity-30 transform scale-110"></div>
+              <div className="relative flex items-center justify-center w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg">
+                <CreditCard className="h-10 w-10 text-white" />
+              </div>
             </div>
-          </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">
-            Payment{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">Details</span>
-          </h1>
+            {/* Enhanced title with gradient and animation */}
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-slate-800">Payment </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600 animate-gradient">
+                Details
+              </span>
+            </h1>
 
-          <p className="text-lg text-slate-600 mb-8">
-            Complete your registration payment securely through SBI Collect. Follow the step-by-step guide below.
-          </p>
+            {/* Enhanced description */}
+            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Complete your registration payment securely through SBI Collect. Follow our step-by-step guide below to ensure a smooth payment process.
+            </p>
 
-          <div className="bg-amber-50 p-6 rounded-2xl border border-amber-200">
-            <div className="flex items-start space-x-3">
-              <AlertCircle className="h-6 w-6 text-amber-500 mt-1" />
-              <div className="text-left">
-                <h3 className="font-bold text-amber-800 mb-2">Important Note</h3>
-                <p className="text-amber-700">
-                  Payment must be made through SBI Collect only. The fees include processing charges. Please save your
-                  payment receipt and DU Number for future reference.
-                </p>
+            {/* Enhanced alert box */}
+            <div className="bg-gradient-to-r from-amber-50 to-amber-100 p-8 rounded-2xl border border-amber-200 shadow-lg max-w-3xl mx-auto">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="p-2 bg-amber-100 rounded-full">
+                    <AlertCircle className="h-6 w-6 text-amber-600" />
+                  </div>
+                </div>
+                <div className="text-left">
+                  <h3 className="font-bold text-amber-800 text-lg mb-2">Important Payment Information</h3>
+                  <p className="text-amber-700 leading-relaxed">
+                    Payment must be made through SBI Collect only. The fees include processing charges. Please save your
+                    payment receipt and DU Number for future reference. For any payment-related queries, contact our support team.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
