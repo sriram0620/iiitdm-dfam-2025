@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight, Calendar, MapPin, ChevronDown } from "lucide-react"
+import { ArrowRight, Calendar, MapPin, ChevronDown, ExternalLink, CreditCard } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Hero() {
@@ -179,7 +179,15 @@ export default function Hero() {
                 size="lg"
                 className="bg-white/10 hover:bg-white/20 text-white border-white/30 px-8 py-6 text-lg rounded-full backdrop-blur-sm"
               >
-                <Link href="#about">Learn More</Link>
+                <a
+                  href="https://www.onlinesbi.sbi/sbicollect/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <CreditCard className="mr-2 h-5 w-5" />
+                  SBI Collect
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </motion.div>
 
