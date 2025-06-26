@@ -1,15 +1,14 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
-import { useState } from "react"
+import { ChevronLeft, ChevronRight, ZoomIn, X } from "lucide-react"
 
 export default function Gallery() {
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 })
   const [activeIndex, setActiveIndex] = useState(0)
   const [showLightbox, setShowLightbox] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
@@ -62,7 +61,7 @@ export default function Gallery() {
   }
 
   return (
-    <section id="gallery" ref={sectionRef} className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="gallery" ref={sectionRef} className="py-12 sm:py-24 bg-slate-50 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-30">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -75,14 +74,14 @@ export default function Gallery() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold mb-6 text-slate-800">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-slate-800">
             Previous Event{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">Glimpses</span>
           </h2>
@@ -98,7 +97,7 @@ export default function Gallery() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="aspect-[21/9] relative">
+          <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] relative">
             {images.map((image, index) => (
               <div
                 key={index}
@@ -123,20 +122,20 @@ export default function Gallery() {
           </div>
 
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 transition-colors duration-300"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 transition-colors duration-300"
             onClick={prevImage}
           >
-            <ChevronLeft className="h-6 w-6 text-white" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
           </button>
 
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 transition-colors duration-300"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/40 transition-colors duration-300"
             onClick={nextImage}
           >
-            <ChevronRight className="h-6 w-6 text-white" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
           </button>
 
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2">
             {images.map((_, index) => (
               <button
                 key={index}
@@ -154,8 +153,8 @@ export default function Gallery() {
       {/* Lightbox */}
       {showLightbox && (
         <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center" onClick={closeLightbox}>
-          <div className="relative w-full max-w-6xl max-h-[90vh] p-4" onClick={(e) => e.stopPropagation()}>
-            <div className="relative aspect-[16/9]">
+          <div className="relative w-full max-w-6xl max-h-[90vh] p-2 sm:p-4" onClick={(e) => e.stopPropagation()}>
+            <div className="relative aspect-[4/3] sm:aspect-[16/9]">
               <Image
                 src={images[lightboxIndex].src || "/placeholder.svg"}
                 alt={images[lightboxIndex].alt}
@@ -196,5 +195,3 @@ export default function Gallery() {
     </section>
   )
 }
-
-import { X } from "lucide-react"

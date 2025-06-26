@@ -136,7 +136,7 @@ export default function Hero() {
               className="flex flex-col items-center text-center mb-12"
             >
               <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-2">
-                AI Enabled
+                Ai-enabled
               </span>
               <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Design for{" "}

@@ -8,7 +8,7 @@ import { Layers, Lightbulb, Zap, Cpu, Maximize2, RefreshCw, Grid3X3, Repeat, Wor
 
 export default function TopicsList() {
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 })
 
   const topics = [
     {
@@ -106,7 +106,7 @@ export default function TopicsList() {
   }
 
   return (
-    <section id="topics" ref={sectionRef} className="py-24 bg-slate-50 relative overflow-hidden">
+    <section id="topics" ref={sectionRef} className="py-12 sm:py-24 bg-slate-50 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-30">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -119,9 +119,9 @@ export default function TopicsList() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -132,7 +132,7 @@ export default function TopicsList() {
             </div>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-slate-800">
             STTP List of{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-teal-600">Topics</span>
           </h2>
@@ -143,7 +143,7 @@ export default function TopicsList() {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -159,7 +159,7 @@ export default function TopicsList() {
               )}
             >
               {/* Image Container with Overlay */}
-              <div className="h-56 relative overflow-hidden">
+              <div className="h-48 sm:h-56 relative overflow-hidden">
                 <Image
                   src={topic.image || "/placeholder.svg"}
                   alt={topic.title}
