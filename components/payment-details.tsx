@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 import { cn } from "@/lib/utils"
 import {
@@ -23,7 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function PaymentDetails() {
   const sectionRef = useRef<HTMLElement>(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 })
   const [activeStep, setActiveStep] = useState(0)
 
   const pricingTiers = [
@@ -149,7 +149,7 @@ export default function PaymentDetails() {
         <motion.div
           className="max-w-4xl mx-auto text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           {/* Enhanced Header Section */}
@@ -203,7 +203,7 @@ export default function PaymentDetails() {
         <motion.div
           className="mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-slate-800">Registration Fees</h2>
@@ -236,7 +236,7 @@ export default function PaymentDetails() {
         <motion.div
           className="mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-8 shadow-sm">
@@ -265,7 +265,7 @@ export default function PaymentDetails() {
         <motion.div
           className="mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-slate-800">Accepted Payment Methods</h2>
@@ -287,7 +287,7 @@ export default function PaymentDetails() {
         <motion.div
           className="mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-slate-800">Step-by-Step Payment Guide</h2>
@@ -347,7 +347,7 @@ export default function PaymentDetails() {
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl p-6 sm:p-8 text-white">
@@ -386,7 +386,7 @@ export default function PaymentDetails() {
         <motion.div
           className="mt-8 sm:mt-16 bg-slate-50 rounded-2xl p-4 sm:p-8"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-4 text-center">Need Help with Payment?</h3>
